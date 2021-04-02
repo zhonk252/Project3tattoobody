@@ -1,0 +1,44 @@
+body{
+    position: fixed;
+}
+
+.tattoo-image{
+    position: absolute;
+    left:0;
+    top:0;
+    /* z-index: -1; */
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    /* display: grid;
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: repeat(5,20%); */
+}
+
+
+/* #img-list{
+    position: absolute;
+    left:0;
+    right:0;
+    z-index: -1;
+    width: 25%;
+
+} */
+
+
+
+
+
+/* #drag-1{
+    width: 25%;
+    min-height: 6.5em;
+    margin: 1rem 0 0 1rem;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  } */
