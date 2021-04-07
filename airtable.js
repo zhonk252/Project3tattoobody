@@ -1,45 +1,32 @@
 console.log("Hello, Airtable");
 
-// load the airtable library, call it "Airtable"
 var Airtable = require("airtable");
 console.log(Airtable);
 
-//use airtable library, connect to our base using API key
 var base = new Airtable({ apiKey: 'keyzsXmrpyYLITyeJ' }).base('appxVIsMuLMtIWJ4v');
 
-//get our collection base, select all records
-//specify functions that will receive the data
 base("lettered").select({}).eachPage(gotPageOfLetters, gotAllLetters);
 
-// an empty array to hold our song data
 var letters = [];
 
-// callback function that receives our data
 function gotPageOfLetters(records, fetchNextPage) {
     console.log("gotPageOfLetters()");
-    // add the records from this page to our books array
     letters.push(...records);
-    // request more pages
     fetchNextPage();
 }
 
-// call back function that is called when all pages are loaded
 function gotAllLetters(err) {
     console.log("gotAllLetters()");
-
-    // report an error, you'd want to do something better than this in production
     if (err) {
         console.log("error loading data");
         console.error(err);
         return;
     }
 
-    // call functions to log and show the songs
     consoleLogLetters();
     showLetters();
 }
 
-// just loop through the songs and console.log them
 function consoleLogLetters() {
     console.log("consoleLogLetteres()");
     letters.forEach((letter) => {
@@ -47,19 +34,37 @@ function consoleLogLetters() {
     });
 }
 
-// loop through our airtable data, create elements
 function showLetters() {
     console.log("showLetters()");
-    letters.forEach((letter) => {
+    for(var i = 0; i < 50; i++){
+       var letteredImg = document.createElement("img");
+      letteredImg.classList.add("tattoo-image");
+      letteredImg.src = letters[i].fields.Attachments[0].url;
+      document.querySelector("#img-list").append(letteredImg);
+      letters[i].showing = true;
+      letteredImg.addEventListener("click",function(){
+        // console.log(event);
+        let filtered = letters.filter(a => a.showing!== true);
+        
+        var image = event.currentTarget;
+        // console.log(image);
+        let length = filtered.length;
 
-        var letteredImg = document.createElement("img");
-        letteredImg.classList.add("tattoo-image");
-        letteredImg.src = letter.fields.Attachments[0].url;
-        document.querySelector("#img-list").append(letteredImg);
+        // console.log(length);
+        let randomNumber = Math.round(Math.random()*length)
+        console.log(randomNumber);
 
-    });
+        let newImage = filtered[randomNumber];
+        letters.find(a => a.fields.Attachments[0].url == image.src).showing = false;
+        image.src = newImage.fields.Attachments[0].url;
+        
+        newImage.showing = true;
+
+
+      })
+    }
+    
 }
-
 
 interact('.draggable')
   .draggable({
@@ -98,10 +103,13 @@ function dragMoveListener (event) {
     target.style.transform =
       'translate(' + x + 'px, ' + y + 'px)'
 
+
   // update the posiion attributes
   target.setAttribute('data-x', x)
   target.setAttribute('data-y', y)
+  
+  
 }
-
 // this function is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener
+
