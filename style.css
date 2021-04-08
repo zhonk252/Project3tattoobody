@@ -176,7 +176,7 @@ button{
         overflow: hidden;
     }
     #img-list{
-        grid-template-columns: repeat(8,13%);
+        grid-template-columns: repeat(8,12%);
         grid-template-rows: repeat(13,6%);
     }
     .tattoo-image{
@@ -188,10 +188,30 @@ button{
         width:15%vw;
         height: 20%vh;
     }
-    .tattoo-image{
-        width:100%;
-    }
     #clipping{
         transform: scale(2.5);
+    }
+}
+
+
+@media screen and (min-width:2000px){
+    body{
+        overflow: hidden;
+    }
+    #img-list{
+        grid-template-columns: repeat(8,8%);
+        grid-template-rows: repeat(13,6%);
+    }
+    .tattoo-image{
+        width:140%;
+        padding:0;
+        margin:0;
+    }
+    #bodymap{
+        width:15%vw;
+        height: 20%vh;
+    }
+    #clipping{
+        transform: scale(4);
     }
 }
