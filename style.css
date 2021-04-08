@@ -18,6 +18,10 @@ body{
     grid-template-rows: repeat(20,3%);
 }
 
+#tracing{
+    /* width:5000px; */
+}
+
 #bodymap{
     margin-top: 2rem;
     margin-left: 2rem;
@@ -29,10 +33,15 @@ body{
     justify-content: space-between;
 }
 
-#drag{
+/* #drag{
     transform:scale(2);
 
+} */
+
+#clipping{
+   transform: scale(2);
 }
+
 
 
 .dropbtn {
@@ -75,7 +84,7 @@ body{
     }
     #img-list{
         grid-template-columns: repeat(6,20%);
-        grid-template-rows: repeat(10,10%);
+        grid-template-rows: repeat(10,5%);
     }
     .tattoo-image{
         width:250%;
@@ -100,8 +109,8 @@ body{
         position:relative;
     }
     #img-list{
-        grid-template-columns: repeat(5,20%);
-        grid-template-rows: repeat(10,6%);
+        grid-template-columns: repeat(6,20%);
+        grid-template-rows: repeat(12,6%);
     }
     .tattoo-image{
         width:100%;
@@ -115,8 +124,8 @@ body{
         position:fixed;
     }
     #img-list{
-        grid-template-columns: repeat(6,8%);
-        grid-template-rows: repeat(15,5%);
+        grid-template-columns: repeat(6,15%);
+        grid-template-rows: repeat(12,5%);
     }
     .tattoo-image{
         width:230%;
