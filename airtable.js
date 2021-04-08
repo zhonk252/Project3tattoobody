@@ -36,7 +36,7 @@ function consoleLogLetters() {
 
 function showLetters() {
     console.log("showLetters()");
-    for(var i = 0; i < 60; i++){
+    for(var i = 0; i < 80; i++){
        var letteredImg = document.createElement("img");
       letteredImg.classList.add("tattoo-image");
       letteredImg.src = letters[i].fields.Attachments[0].url;
@@ -116,6 +116,8 @@ function showLetters() {
 
 var elem = document.querySelector('.draggable');
 var draggie = new Draggabilly( elem, {
-  // options...
+        // containment: '#All'
 });
+
+//if the element's x or y position out of the canvas size, start alarm and refresh page buttom show up
 

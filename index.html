@@ -21,23 +21,36 @@
     <button class="dropbtn">?</button>
     <div class="dropdown-content">
       <p> Drag the Body / Hover or Click the Images</p>
-      <br>
-      <p>Oops! You lost the body!</p>
-      <br>
-      <p>Wants to get it back? Refresh the page and wait a sec!</p>
-
     </div>
   </div>
 
-<div id="parentContainer">
-    <img id="bodymap" src="1x/body.png" width="80px" height="100%">
+  <div class="dropdown2">
+     <img class="dropbtn2" src="1x/body.png" width="80px" height="160px">
+    <div class="dropdown-content2">
+      <p>Oops! Do You lost the body ?</p>
+      <br>
+      <p>Wants to get it back ? Click the Button and wait a sec !</p>
+      <br>
+      <button onClick="window.location.reload();">Get the body back here !</button>
+    </div>
     
+  </div>
+ 
+  
+<div id="All">
+<div id="parentContainer">
+    
+      
     <div id="drag" class="draggable">
     <div id="img-list">   
 
     </div>
     </div>
+  </div>
+   </div>
+
    
+
       <svg id="tracing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 343.92 676.91">
         <defs>
           <clipPath id="clipping">
@@ -45,7 +58,5 @@
         </clipPath>
         </defs>
       </svg>
-    
-    </div>
 </body>
 </html>
