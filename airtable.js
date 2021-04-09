@@ -119,8 +119,12 @@ function showLetters() {
 
 var elem = document.querySelector('.draggable');
 var draggie = new Draggabilly( elem, {
-        // containment: ''
+        // containment: '#All'
 });
 
 
+function resetBody() {
+    document.querySelector("#drag").style.top = 0
+    document.querySelector("#drag").style.left = 0
+}
 //if the element's x or y position out of the canvas size, start alarm and refresh page buttom show up
