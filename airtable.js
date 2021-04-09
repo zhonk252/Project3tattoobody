@@ -63,7 +63,7 @@ function showLetters() {
         
         newImage.showing = true;
         
-
+        
       })
     }
     
@@ -119,8 +119,8 @@ function showLetters() {
 
 var elem = document.querySelector('.draggable');
 var draggie = new Draggabilly( elem, {
-        // containment: '#All'
+        // containment: ''
 });
 
-//if the element's x or y position out of the canvas size, start alarm and refresh page buttom show up
 
+//if the element's x or y position out of the canvas size, start alarm and refresh page buttom show up

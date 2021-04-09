@@ -5,10 +5,7 @@ body{
 button{
     padding:0.5rem;
 }
-#center{
-    display: flex;
-    justify-content: center;
-}
+
 .tattoo-image{
     width:150%;
     padding:0;
@@ -20,6 +17,7 @@ button{
 .tattoo-image:hover{
     z-index: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    cursor: move;
 }
 
 
@@ -46,11 +44,6 @@ button{
     display: grid;
     grid-template-columns: repeat(5,15%);
     grid-template-rows: repeat(20,3%);
-}
-
-#All{
-    display: flex;
-    justify-content: center;
 }
 
 #parentContainer{
@@ -136,6 +129,7 @@ button{
 .dropdown2:hover .dropbtn2 {background-color: #ffffff;}
 
 
+
 @media screen and (max-width:480px){
     body{
         overflow: auto;
@@ -159,6 +153,10 @@ button{
     }
     #clipping{
         transform: scale(1);
+    }
+    #drag{
+        left: -13vw;
+        top:15vh;
     }
 }
 
@@ -184,6 +182,10 @@ button{
     #clipping{
         transform: scale(1.5);
     }
+    #drag{
+        left: 15vw;
+        top:8vh;
+    }
 }
 
 @media screen and (min-width:1000px){
@@ -205,6 +207,10 @@ button{
     }
     #clipping{
         transform: scale(2.5);
+    }
+    #drag{
+        left: 16vw;
+        top:5vh;
     }
 }
 
@@ -229,4 +235,5 @@ button{
     #clipping{
         transform: scale(4);
     }
+    
 }
