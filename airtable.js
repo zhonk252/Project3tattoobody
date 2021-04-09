@@ -36,9 +36,12 @@ function consoleLogLetters() {
 
 function showLetters() {
     console.log("showLetters()");
-    for(var i = 0; i < 80; i++){
+    for(var i = 0; i < 100; i++){
        var letteredImg = document.createElement("img");
       letteredImg.classList.add("tattoo-image");
+      letteredImg.classList.add("hvr-grow");
+      letteredImg.classList.add("crop");
+      
       letteredImg.src = letters[i].fields.Attachments[0].url;
       document.querySelector("#img-list").append(letteredImg);
       letters[i].showing = true;
@@ -59,7 +62,7 @@ function showLetters() {
         image.src = newImage.fields.Attachments[0].url;
         
         newImage.showing = true;
-
+        
 
       })
     }
